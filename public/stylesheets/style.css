@@ -1,0 +1,228 @@
+/*Reset*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding:0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+div,p, h1, h2, h3, h4, h5, h6 {
+ 
+  word-break: break-all;
+}
+
+textarea{
+  resize: none;
+}
+
+a:focus{
+  text-decoration: none;
+}
+
+:root{
+  --main-grey: rgb(26, 24, 24);
+  --bg-grey: rgb(44, 42, 42);
+  --icon-blue:#0275d8;
+  --text-color:#ebebeb;
+}
+body{
+  background-color: var(--bg-grey);
+  color:var(--text-color)
+}
+
+/*Header*/
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:1rem;
+  background-color: var(--main-grey);
+  color:#fff;
+  font-size: 1rem;
+}
+.header .title {
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+
+.header ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:2rem;
+  list-style-type: none;
+}
+.header a{
+  display: flex;
+  align-items: center;
+  gap:.9rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color:#fff;
+}
+.header a:hover{
+  color:rgb(112, 108, 108);
+}
+ span{
+  color:var(--icon-blue);
+}
+.header .message{
+  display: inline-block;
+  background:url('../images/login.png') no-repeat 50% 50%;
+  background-size: 100% 20px;
+  height:20px;
+  width:20px;
+  color:red;
+}
+.glyphicon-envelope{
+  color:rgb(0, 172, 0);
+}
+
+.glyphicon-fire{
+  color:rgb(238, 107, 0);
+}
+
+
+/*FORM*/
+
+.form-container{
+  width:50%;
+  max-width: 1000px;
+  margin: 1rem auto;
+  padding:2rem;
+  border-radius: 5px;
+  color:white;
+  background-color: var(--main-grey);
+}
+.error{
+  color:red;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/*Posts*/
+.post-container{
+  width:70%;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  
+}
+.grid-container{  
+  width:80%;
+  display: grid;
+  margin:1rem auto;
+  justify-content: center;
+  grid-template-columns: minmax(150px, 800px);
+  gap:3rem;
+}
+
+.post-card{
+  display: flex;
+  gap:1rem;
+  background-color: var(--main-grey);
+  padding:2rem;
+  border-radius: 10px;  
+
+}
+
+.content{
+  flex-grow: 1;
+  padding:.5rem;
+}
+
+.content h1{
+  margin-bottom: .5rem;
+}
+.content >p {
+  padding:1rem;
+  background-color: var(--bg-grey);
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+.footer{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap:.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: italic;
+}
+.footer *{
+  padding:.5rem;
+  border-radius: 10px;
+  background-color: var(--bg-grey);
+}
+.img-container{
+  display: flex;
+  align-items: center;
+}
+.img-container img{
+  height: 80px;
+}
+
+
+
+/*FOOTER*/
+
+.main-footer{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:.7rem 4rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  background-color: var(--main-grey);
+  
+}
+.main-footer p{
+  display: flex;
+  gap:2rem;
+  align-items: center;
+  margin-left: auto;
+}
+
+.footer-username{
+  font-size: 1.3rem;
+  font-weight: 600;
+  
+}

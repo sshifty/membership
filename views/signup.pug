@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    
+    div.form-container
+        if errorMessage
+            for error in errorMessage
+                h2.text-center.text-danger #{error}
+        if foundUser
+            h3.text-center.text-danger #{foundUser} already exist! 
+        form.sign-up(action='' method='POST')
+            div.input-container.form-group
+                label(for='username') Username
+                input.form-control(type="text" name="username" id="username" required )
+                if nameErr
+                    span.error #{nameErr}
+            div.input-container.form-group
+                label(for="password") Password
+                input.form-control(type="password" name="password" id="password" required)
+                if pwErr
+                    span.error #{pwErr}
+            if type==='signup'
+                div.input-container.form-group
+                    label(for="confirm") Confirm Password
+                    input.form-control(type="password" name="confirm" id="confirm" required valid="invalid")
+                    if confErr 
+                        span.error #{confErr}
+            button.btn.btn-success(type="submit") #{type==='signup'?"Sign Up":"Log In"}

@@ -1,0 +1,16 @@
+extends layout 
+
+block content 
+
+    div.form-container
+        h1.text-center  Create a message!
+        form.sign-up(action='' method='POST')
+            div.form-group           
+                input.form-control(type='text' id='title' name='title' placeholder='Enter your title here' required)
+                if titleErr
+                    span.error #{titleErr}
+            div.form-group
+                textarea.form-control(name="message" placeholder="Enter your message here" required)
+                if messageErr
+                    span.error #{messageErr}
+            button.btn.btn-success(type='submit') Submit

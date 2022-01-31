@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+  header.header    
+    a.title(href="/") Members Only
+    if currentUser
+      div.logged-in
+        ul
+          li 
+            a(href="/message") #[span.glyphicon.glyphicon-envelope ]Write a Message
+          li 
+            a(href="/member") #[span.glyphicon.glyphicon-user ]Become a member
+          li
+            a(href="/admin") #[span.glyphicon.glyphicon-fire ]Become an admin
+          li 
+            a(href="/logout") #[span.glyphicon.glyphicon-log-out ]Logout
+    else
+      div.logged-out
+        ul
+          li 
+            a(href="/signup") #[span.glyphicon.glyphicon-log-in ]Sign Up
+          li 
+            a(href="/login") #[span.glyphicon.glyphicon-log-in ]Log In
+         
+              
+          
+  block content
+  footer.main-footer
+    if user
+      h4.footer-username #[span.glyphicon.glyphicon-user]&nbsp;#{user.username}
+    p Project was made for the TOP curriculum using Nodejs, Pug, PassportJS, bcryptjs #[a(href="#") #[img(src="../images/github.svg" style={"height":"30px"})]]

@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    
+   
+    div.post-container
+        div.grid-container
+         for post in posts
+            div.post-card
+                div.img-container
+                    img(src=post.user.avatar)
+                div.content
+                    h1=post.title 
+                    p=post.post
+                    div.footer
+                        p.date #[span.glyphicon.glyphicon-time] #{moment(post.timestamp).format('YYYY/MM/D hh:mm a')}
+                        if member
+                            p.name #[span.glyphicon.glyphicon-user] #{post.user.username}
+                        else
+                            p.name #[span.glyphicon.glyphicon-user] Anonymous
+                    if admin
+                        div.delete
+                            a.btn.btn-danger(href=post._id+'/delete') Delete
+        
